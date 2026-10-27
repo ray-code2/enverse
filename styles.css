@@ -1,0 +1,55 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--b:#000;--w:#fff;--g:#6b6b6b}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--b);background:var(--w);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#000;color:#fff;padding:8px;z-index:9}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid #000;z-index:5}
+.nav-in{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px;gap:16px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:.25em;text-decoration:none}
+nav a{margin-left:24px;text-decoration:none;font-weight:500}
+.btn{display:inline-block;background:#000;color:#fff;border:2px solid #000;padding:14px 26px;font-weight:700;text-decoration:none;cursor:pointer;font:inherit;font-weight:700}
+.btn:hover{background:#fff;color:#000}
+.btn-sm{padding:8px 16px}
+.btn-ghost{background:#fff;color:#000}.btn-ghost:hover{background:#000;color:#fff}
+.btn-inv{background:#fff;color:#000;border-color:#fff}.btn-inv:hover{background:#000;color:#fff}
+:focus-visible{outline:3px solid #000;outline-offset:3px}
+.invert :focus-visible{outline-color:#fff}
+.hero{padding:120px 24px 100px}
+.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;font-weight:700;margin-bottom:24px}
+h1{font-size:clamp(2.4rem,6.5vw,5.2rem);line-height:1.02;font-weight:800;letter-spacing:-.03em}
+.lead{font-size:1.25rem;max-width:640px;margin:28px 0 36px;color:#222}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.section{padding:96px 24px}
+.invert{background:#000;color:#fff}.invert .sub{color:#bbb}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em}
+.sub{color:var(--g);margin:8px 0 40px}
+.mt{margin-top:80px;margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid.two{grid-template-columns:repeat(2,1fr);margin-top:32px}
+.card{border:1px solid #000;padding:24px}
+.card h3{margin:12px 0 6px;font-size:1.1rem}.card p{color:#444}
+.ph{border-style:dashed}
+.thumb{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#f2f2f2 0 12px,#fff 12px 24px);display:grid;place-items:center;font-weight:700;letter-spacing:.15em;font-size:.8rem;border:1px dashed #000}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tier{border:1px solid #fff;padding:32px;display:flex;flex-direction:column}
+.tier.featured{background:#fff;color:#000}
+.tier .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;font-weight:700}
+.tier h3{font-size:1.4rem}
+.price{font-size:2rem;font-weight:800;margin:12px 0 20px}.price span{font-size:.9rem;font-weight:500}
+.tier ul{list-style:none;margin-bottom:28px;flex:1}.tier li{padding:8px 0;border-top:1px solid currentColor}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px}
+.steps li{border-top:3px solid #000;padding-top:16px}.steps p{color:#444}
+.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.logos span{border:1px dashed #000;padding:28px;text-align:center;font-size:.75rem;letter-spacing:.15em;font-weight:700}
+blockquote{font-size:1.15rem;font-weight:500}cite{display:block;margin-top:16px;font-size:.9rem;font-style:normal;color:#555}
+.two-col{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.form label{display:block;font-weight:500;margin-bottom:16px}
+.form input,.form select,.form textarea{display:block;width:100%;margin-top:6px;padding:12px;font:inherit;border:1px solid currentColor;background:transparent;color:inherit;border-radius:0}
+.form select option{color:#000}
+.inline{display:flex;gap:12px;max-width:560px;flex-wrap:wrap}.inline input{flex:1;min-width:220px;margin:0}
+.status{width:100%;margin-top:8px}
+.foot{border-top:1px solid #000;font-size:.9rem}
+@media(max-width:860px){.grid,.tiers,.two-col,.grid.two{grid-template-columns:1fr}.steps,.logos{grid-template-columns:1fr 1fr}nav a:not(.btn){display:none}.hero{padding:72px 24px}.section{padding:64px 24px}}
