@@ -13,8 +13,7 @@ Plain HTML/CSS/JS, no build step. Files: `index.html`, `styles.css`, `main.js`.
 9. Optional: hero copy, budget ranges in form, favicon/OG image, meta description.
 
 ## Connecting forms
-- **Formspree (any host):** create 2 free forms at formspree.io, replace `YOUR_FORM_ID` / `YOUR_NEWSLETTER_FORM_ID` in `index.html`. JS posts via fetch and shows a status message.
-- **Netlify Forms:** forms already have `data-netlify="true"` and `name`. On Netlify, remove the `action` attributes (or set `action="/"`) and drop the JS fetch guard; submissions appear in Netlify dashboard.
+- **Forms:** no third-party service. `main.js` opens a prefilled email to hello@enversecreative.com (mailto).
 - **Newsletter alternative:** swap the form for a Buttondown / Mailchimp / Beehiiv embed.
 
 ## Free hosting

@@ -1,10 +1,17 @@
 document.getElementById('y').textContent=new Date().getFullYear();
-// Submits forms via fetch when a real Formspree endpoint is configured.
-document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',async e=>{
-  const s=f.querySelector('.status');
-  if(f.action.includes('YOUR_')){e.preventDefault();s.textContent='Form not connected yet (TODO: set endpoint — see README).';return;}
+// Forms open a prefilled email to hello@ (no third-party form service).
+const TO='hello@enversecreative.com';
+document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{
   e.preventDefault();
-  try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
-    s.textContent=r.ok?'Thanks — we\'ll be in touch.':'Something went wrong. Please email us.';if(r.ok)f.reset();}
-  catch{s.textContent='Network error. Please try again.';}
+  const d=new FormData(f), s=f.querySelector('.status');
+  let subject, body;
+  if(f.name==='newsletter'){
+    subject='Newsletter signup';
+    body='Please add me to The Enverse brief.\n\nEmail: '+(d.get('email')||'');
+  }else{
+    subject=d.get('_subject')||'New Enverse booking request';
+    body=['Name: '+(d.get('name')||''),'Email: '+(d.get('email')||''),'Company: '+(d.get('company')||''),'Monthly ad budget: '+(d.get('budget')||''),'','What we need:',(d.get('message')||'')].join('\n');
+  }
+  window.location.href='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  if(s)s.textContent='Your email app should open with your message. If not, email us at '+TO+'.';
 }));
