@@ -9,7 +9,7 @@ Plain HTML/CSS/JS, no build step. Files: `index.html`, `styles.css`, `main.js`.
 5. Testimonials: 2 quotes with name/title/company (real, with permission).
 6. Contact reply time ("within [X] business days").
 7. Booking form endpoint `YOUR_FORM_ID`; newsletter endpoint `YOUR_NEWSLETTER_FORM_ID`.
-8. Footer: contact email (currently hello@example.com) and LinkedIn URL.
+8. Footer: contact email (hello@enversecreative.com).
 9. Optional: hero copy, budget ranges in form, favicon/OG image, meta description.
 
 ## Connecting forms
