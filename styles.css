@@ -60,3 +60,4 @@ blockquote{font-size:1.15rem;font-weight:500}cite{display:block;margin-top:16px;
 .values{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #000}.values li{padding:14px 0;border-bottom:1px solid #000;font-weight:600}@media(max-width:860px){.values{grid-template-columns:1fr}}
 .pitch{margin:4px 0 12px;font-style:italic}
 .values li strong{display:block}.values li{padding-right:12px;font-weight:400}
+.logo-img{display:block;height:44px;width:auto}.social{display:inline-flex;gap:12px;vertical-align:middle;margin-left:8px}.social a{display:inline-flex;color:inherit;margin:0}.social-lg{margin:8px 0 0}.social-lg svg{width:28px;height:28px}
