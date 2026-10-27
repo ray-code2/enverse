@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Work — Enverse</title><meta name="description" content="Enverse spec ad portfolio and starter packs.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css"></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap nav-in"><a href="../" class="logo">ENVERSE</a>
+<nav aria-label="Primary"><a href="./" aria-current="page">Work</a><a href="../#packages">Packages</a><a href="../#process">Process</a><a href="../#contact" class="btn btn-sm">Book a call</a></nav></div></header>
+<main id="main">
+<section class="wrap section">
+  <h1>Work</h1>
+  <p class="sub">Spec ads: unpaid sample ads made to show our style. Not affiliated with or endorsed by any brand shown.</p>
+  <div class="grid">
+    <article class="card ph"><div class="thumb media" data-ad="1">SPEC AD 1 · PLACEHOLDER</div>
+      <span class="label">Spec ad, not affiliated</span>
+      <h3>Spec ad 1 <small>[PLACEHOLDER]</small></h3>
+      <p><strong>Brief [PLACEHOLDER]:</strong> Audience: [who] · Feeling: [what they feel] · Idea: [the concept].</p></article>
+    <article class="card ph"><div class="thumb media" data-ad="2">SPEC AD 2 · PLACEHOLDER</div>
+      <span class="label">Spec ad, not affiliated</span>
+      <h3>Spec ad 2 <small>[PLACEHOLDER]</small></h3>
+      <p><strong>Brief [PLACEHOLDER]:</strong> Audience: [who] · Feeling: [what they feel] · Idea: [the concept].</p></article>
+    <article class="card ph"><div class="thumb media" data-ad="3">SPEC AD 3 · PLACEHOLDER</div>
+      <span class="label">Spec ad, not affiliated</span>
+      <h3>Spec ad 3 <small>[PLACEHOLDER]</small></h3>
+      <p><strong>Brief [PLACEHOLDER]:</strong> Audience: [who] · Feeling: [what they feel] · Idea: [the concept].</p></article>
+  </div>
+</section>
+<section class="section invert"><div class="wrap">
+  <h2>Starter packs</h2><p class="sub">Try Enverse with a small first order.</p>
+  <div class="tiers grid two packs">
+    <div class="tier"><h3>Statics pack</h3><p class="price">$49</p><ul><li>3 static ads</li></ul><div class="cta"><a href="../#contact" class="btn btn-inv">Contact us</a><a href="mailto:hello@example.com?subject=Enverse%20%2449%20starter%20pack" class="btn btn-ghost">Email [PLACEHOLDER]</a></div></div>
+    <div class="tier featured"><h3>Statics + video pack</h3><p class="price">$99</p><ul><li>3 static ads</li><li>1 short video</li></ul><div class="cta"><a href="../#contact" class="btn">Contact us</a><a href="mailto:hello@example.com?subject=Enverse%20%2499%20starter%20pack" class="btn btn-ghost">Email [PLACEHOLDER]</a></div></div>
+  </div></div>
+</section></main>
+<footer class="foot"><div class="wrap nav-in"><span>© <span id="y"></span> Enverse. All rights reserved.</span><span><a href="mailto:hello@example.com">[PLACEHOLDER email]</a></span></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+// Drop files in work/media/ as ad1.mp4 (or ad1.jpg/.png/.webp), ad2..., ad3... and they replace the placeholders.
+document.querySelectorAll('[data-ad]').forEach(function(slot){var n=slot.dataset.ad;
+ var v=document.createElement('video');v.muted=v.loop=v.playsInline=v.autoplay=true;v.controls=true;
+ v.onloadeddata=function(){slot.textContent='';slot.appendChild(v)};
+ v.onerror=function(){var ex=['jpg','png','webp'],i=0;(function t(){if(i>=ex.length)return;var im=new Image();im.alt='Spec ad '+n;
+  im.onload=function(){slot.textContent='';slot.appendChild(im)};im.onerror=function(){i++;t()};im.src='media/ad'+n+'.'+ex[i]})()};
+ v.src='media/ad'+n+'.mp4';});
+</script></body></html>
