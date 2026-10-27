@@ -64,9 +64,46 @@ blockquote{font-size:1.15rem;font-weight:500}cite{display:block;margin-top:16px;
 .logo-img{height:100px;margin:-24px 0 -24px -24px}@media(max-width:860px){.logo-img{height:72px;margin:-17px 0 -17px -17px}}
 .grid.grid-4{grid-template-columns:repeat(4,1fr)}.grid.grid-2{grid-template-columns:repeat(2,1fr)}@media(max-width:1100px){.grid.grid-4{grid-template-columns:repeat(2,1fr)}}@media(max-width:860px){.grid.grid-4,.grid.grid-2{grid-template-columns:1fr}}
 
-.why{list-style:none;padding:0;margin:32px 0 0;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #000}.why li{padding:20px 20px 20px 0;border-bottom:1px solid #000}.why li+li{padding-left:20px;border-left:1px solid #000}.why strong{display:block;font-size:1.05rem;margin-bottom:6px}.why p{margin:0;color:#444}@media(max-width:1100px){.why{grid-template-columns:1fr 1fr}.why li,.why li+li{padding:20px 0;border-left:0}}@media(max-width:860px){.why{grid-template-columns:1fr}}
 .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}.hero-media{justify-self:end;width:100%;max-width:340px;margin:0}.hero-player{position:relative;border:1px solid #000;background:#000}.hero-ad{width:100%;height:auto;aspect-ratio:9/16;display:block;object-fit:cover}.hero-play{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;border:2px solid #000;background:#fff;color:#000;display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 6px rgba(255,255,255,.35);transition:transform .15s}.hero-play svg{margin-left:4px}.hero-play:hover,.hero-play:focus-visible{transform:scale(1.06);background:#000;color:#fff;border-color:#fff;outline:none}.hero-player.playing .hero-play{display:none}.hero-media figcaption{font-size:.85rem;color:#444;margin-top:10px}
 section[id]{scroll-margin-top:96px}
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-media{justify-self:center;max-width:300px}section[id]{scroll-margin-top:200px}}
 .hero-nav{display:flex;align-items:center;justify-content:space-between;margin-top:10px}.hero-arrow{width:44px;height:44px;border:1px solid #000;background:#fff;color:#000;display:grid;place-items:center;cursor:pointer}.hero-arrow:hover,.hero-arrow:focus-visible{background:#000;color:#fff;outline:none}.hero-count{font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.05em}.hero-player{touch-action:pan-y}
 html{scroll-padding-top:96px}@media(max-width:860px){html{scroll-padding-top:180px}}
+/* Benefits section (Enverse). Pure black & white, Inter, thin black rules. */
+.benefits-section h2{margin-bottom:48px}
+.benefits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #000;border-bottom:1px solid #000}
+.benefit{padding:40px 28px 44px;border-left:1px solid #000}
+.benefit:first-child{border-left:0;padding-left:0}
+.benefit-icon{display:inline-grid;place-items:center;width:64px;height:64px;border:2px solid #000;border-radius:19px;color:#000;background:#fff;margin-bottom:28px;transition:background .2s ease,color .2s ease}
+.benefit-icon svg{width:36px;height:36px}
+.benefit h3{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;margin:0 0 10px;line-height:1.3}
+.benefit p{margin:0;color:#000;font-size:.98rem;line-height:1.6}
+.benefit:hover .benefit-icon{background:#000;color:#fff}
+@media (prefers-reduced-motion:reduce){.benefit-icon{transition:none}}
+@media (max-width:1100px){
+  .benefits{grid-template-columns:repeat(2,1fr);border-bottom:0}
+  .benefit,.benefit:first-child{border-left:0;padding:36px 28px 40px 0;border-bottom:1px solid #000}
+  .benefit:nth-child(even){border-left:1px solid #000;padding-left:28px}
+  .benefit:last-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .benefits{grid-template-columns:1fr}
+  .benefit,.benefit:nth-child(even){border-left:0;padding:32px 0}
+}
+/* Centered layout */
+.benefits-section h2{text-align:center;margin-left:auto;margin-right:auto}
+.benefit,.benefit:first-child{text-align:center;padding-left:28px;padding-right:28px}
+.benefit-icon{margin-left:auto;margin-right:auto;display:grid}
+@media (max-width:1100px){.benefit,.benefit:first-child,.benefit:nth-child(even){padding-left:24px;padding-right:24px}}
+@media (max-width:640px){.benefit,.benefit:nth-child(even){padding:32px 8px}.benefit p{max-width:30ch;margin:0 auto}}
+/* Trust: commitments, studio, founder note */
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.commit-icon{display:block;width:56px;height:56px;margin-bottom:8px}
+.grid.studio{grid-template-columns:repeat(3,1fr)}
+.studio figure{margin:0}.studio img{width:100%;height:auto;aspect-ratio:4/5;display:block;border:2px solid #000}
+.studio figcaption{font-size:.8rem;color:#444;margin-top:8px}
+.founder-note{margin:48px 0 0;max-width:560px;border:2px solid #000;border-radius:28px;padding:40px;background:#fff;color:#000}
+.founder-note img{display:block;margin-bottom:24px}
+.founder-note blockquote{margin:0;font-size:1.5rem;line-height:1.35;font-weight:600;letter-spacing:-.01em}
+.founder-note figcaption{margin-top:24px;font-size:1rem}
+@media(max-width:860px){.grid.three,.grid.studio{grid-template-columns:1fr}.studio figure{max-width:420px}.founder-note{padding:28px}.founder-note blockquote{font-size:1.25rem}}
