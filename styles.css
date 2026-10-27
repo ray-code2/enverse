@@ -231,3 +231,20 @@ h3,.card h3,.tier h3,.benefit h3{font-size:var(--fs-h3);line-height:var(--lh-snu
 @media(min-width:861px){.hero .hero-media:has(.is-45){max-width:536px}}
 @media(max-width:860px){.hero .hero-media{max-width:436px}}
 @media(max-width:480px){.hero .hero-media{max-width:none;padding:0 64px}.hero-player .hero-prev{left:-64px}.hero-player .hero-next{right:-64px}}
+
+/* === rev j: phone/tablet polish === */
+/* Phones: one-row scrollable menu so the sticky header stays short, and 48px tap targets */
+@media(max-width:860px){
+.nav-in{padding-top:8px;padding-bottom:8px;gap:4px}
+nav{flex-wrap:nowrap;overflow-x:auto;gap:0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:0 24px;width:calc(100% + 48px)}
+nav::-webkit-scrollbar{display:none}
+nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 10px;white-space:nowrap;flex:0 0 auto}
+nav a.btn{margin-left:auto;padding:0 18px}
+html{scroll-padding-top:140px}
+.hero{padding-top:40px}
+}
+/* Small links and icons get a full-size tap area */
+.foot a,.social a{min-height:48px;min-width:48px;display:inline-flex;align-items:center;justify-content:center}
+.foot a[href^="mailto"]{justify-content:flex-start;min-width:0}
+.skip:focus{min-height:48px;display:inline-flex;align-items:center}
+.card a[href="work/"]{display:inline-block;padding:14px 0;margin:-14px 0}
