@@ -61,3 +61,4 @@ blockquote{font-size:1.15rem;font-weight:500}cite{display:block;margin-top:16px;
 .pitch{margin:4px 0 12px;font-style:italic}
 .values li strong{display:block}.values li{padding-right:12px;font-weight:400}
 .logo-img{display:block;height:44px;width:auto}.social{display:inline-flex;gap:12px;vertical-align:middle;margin-left:8px}.social a{display:inline-flex;color:inherit;margin:0}.social-lg{margin:8px 0 0}.social-lg svg{width:28px;height:28px}
+.logo-img{height:100px;margin:-24px 0 -24px -24px}@media(max-width:860px){.logo-img{height:72px;margin:-17px 0 -17px -17px}}
