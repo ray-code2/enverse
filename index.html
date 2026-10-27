@@ -21,11 +21,26 @@
   </div>
 </header>
 <main id="main">
-<section class="hero wrap">
+<section class="hero wrap hero-grid">
+  <div class="hero-text">
   <p class="eyebrow">AI Ad Studio · For US brands</p>
   <h1>Ads people actually want to watch.</h1>
   <p class="lead">Thumbs stop. Faces smile. Your brand sticks. We make static and short video ads for US brands, quick with AI and told by humans.</p>
   <div class="cta"><a href="#contact" class="btn">Book a strategy call</a><a href="#work" class="btn btn-ghost">See the work</a></div>
+  </div>
+  <!-- Hero spec ad carousel. Slides are listed in main.js (HERO_SLIDES); markup below shows slide 1 as the no-JS fallback. -->
+  <figure class="hero-media" aria-roledescription="carousel" aria-label="Enverse spec ads">
+    <div class="hero-player" tabindex="0">
+      <video class="hero-ad" src="work/media/ad3.mp4" poster="assets/hero-ad/ad3-poster.jpg" preload="none" playsinline width="1080" height="1920" aria-label="Poppi spec ad, The 3 PM Issue"></video>
+      <button class="hero-play" type="button" aria-label="Play the Poppi spec ad with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="hero-nav">
+      <button class="hero-arrow hero-prev" type="button" aria-label="Previous spec ad"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg></button>
+      <span class="hero-count" aria-live="polite">1 / 4</span>
+      <button class="hero-arrow hero-next" type="button" aria-label="Next spec ad"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg></button>
+    </div>
+    <figcaption><strong>Poppi: "The 3 PM Issue"</strong> · Spec ad by Enverse, not affiliated with Poppi.</figcaption>
+  </figure>
 </section>
 
 <section id="work" class="wrap section">

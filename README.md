@@ -23,3 +23,7 @@ Plain HTML/CSS/JS, no build step. Files: `index.html`, `styles.css`, `main.js`.
 
 ## Local preview
 `python3 -m http.server 8080` then open http://localhost:8080
+
+## Hero spec ad carousel
+The hero ads are one array, `HERO_SLIDES`, in `main.js` (order = display order). Each entry: `src` (video), `poster` (image), `title`, `label` (screen-reader name), `caption`.
+To make the Enverse company profile ad the first slide, add its video and poster to `assets/hero-ad/` and insert one entry at the top of `HERO_SLIDES`. Arrows, the "1 / N" counter, swipe and captions update automatically. Also update the fallback `src`/`poster`/caption in the hero markup in `index.html` to match slide 1.
