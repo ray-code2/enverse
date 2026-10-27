@@ -58,3 +58,5 @@ blockquote{font-size:1.15rem;font-weight:500}cite{display:block;margin-top:16px;
 .packs .tier .cta{margin-top:auto}
 
 .values{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #000}.values li{padding:14px 0;border-bottom:1px solid #000;font-weight:600}@media(max-width:860px){.values{grid-template-columns:1fr}}
+.pitch{margin:4px 0 12px;font-style:italic}
+.values li strong{display:block}.values li{padding-right:12px;font-weight:400}
