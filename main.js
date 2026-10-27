@@ -24,7 +24,7 @@ document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{
 //    title:'Enverse: "Company profile"', label:'Enverse company profile ad', caption:'Made by Enverse.'},
 // The counter, arrows and captions update automatically. Set ratio:'4/5' for 4:5 videos (default is 9:16); leave caption '' to show the title only.
 const HERO_SLIDES=[
-  {src:'assets/hero-ad/hero-ad.mp4',poster:'assets/hero-ad/hero-poster.webp',title:'Enverse: The Thumb',label:'Enverse ad, The Thumb',caption:'',ratio:'4/5'},
+  {src:'assets/hero-ad/hero-ad.mp4',poster:'assets/hero-ad/hero-poster.webp',title:'Enverse: Behind the company',label:'Enverse ad, Behind the company',caption:'',ratio:'4/5'},
   {src:'work/media/poppi-3pm-issue.mp4',poster:'work/media/poppi-3pm-issue.webp',title:'Poppi: "The 3 PM Issue"',label:'Poppi spec ad, The 3 PM Issue',caption:'Spec ad by Enverse, not affiliated with Poppi.'},
   {src:'work/media/lexus-earned-not-given.mp4',poster:'work/media/lexus-earned-not-given.webp',title:'Lexus: "Earned, Not Given"',label:'Lexus spec ad, Earned, Not Given',caption:'Spec ad by Enverse, not affiliated with Lexus.'},
   {src:'work/media/ad1.mp4',poster:'assets/hero-ad/ad1-poster.jpg',title:'Chewy: "The Last Scoop"',label:'Chewy spec ad, The Last Scoop',caption:'Spec ad by Enverse, not affiliated with Chewy.'},
@@ -52,4 +52,11 @@ document.querySelectorAll('.hero-media').forEach(fig=>{
   w.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
   w.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>50)show(dx<0?i+1:i-1);});
   show(0);
+});
+
+// Simple poster + play button players (e.g. About section company ad)
+document.querySelectorAll('.vplayer').forEach(w=>{
+  const v=w.querySelector('video'),b=w.querySelector('.play-btn');
+  b.addEventListener('click',()=>{w.classList.add('playing');v.controls=true;v.muted=false;v.play().catch(()=>w.classList.remove('playing'));});
+  v.addEventListener('ended',()=>{w.classList.remove('playing');v.controls=false;v.load();});
 });

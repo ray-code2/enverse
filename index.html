@@ -10,7 +10,7 @@
 <meta name="description" content="Enverse makes AI-made static and short video ads for US brands, with human review on every asset. Simple monthly packages from $49.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><link rel="stylesheet" href="styles.css?v=20261027f"><style>.hero-media{width:100%;max-width:340px;margin:0 auto}.hero-ad{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;display:block}@media(min-width:861px){.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}.hero-media{margin:0 0 0 auto}}@media(max-width:860px){.hero-media{max-width:300px}}</style>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><link rel="stylesheet" href="styles.css?v=20261027h"><style>.hero-media{width:100%;max-width:340px;margin:0 auto}.hero-ad{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;display:block}@media(min-width:861px){.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}.hero-media{margin:0 0 0 auto}}@media(max-width:860px){.hero-media{max-width:300px}}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,21 +25,19 @@
   <div class="hero-text">
   <p class="eyebrow">AI Ad Studio · For US brands</p>
   <h1>Ads people actually want to watch.</h1>
-  <p class="lead">Thumbs stop. Faces smile. Your brand sticks. We make static and short video ads for US brands, quick with AI and told by humans.</p>
+  <p class="lead">We make short video and image ads that turn scrollers into buyers. Fast, affordable and made to sell, so you never waste time or money on ads people skip.</p>
   <div class="cta"><a href="#contact" class="btn">Book a strategy call</a><a href="#work" class="btn btn-ghost">See the work</a></div>
   </div>
   <!-- Hero spec ad carousel. Slides are listed in main.js (HERO_SLIDES); markup below shows slide 1 as the no-JS fallback. -->
   <figure class="hero-media" aria-roledescription="carousel" aria-label="Enverse spec ads">
     <div class="hero-player is-45" tabindex="0">
-      <video class="hero-ad" src="assets/hero-ad/hero-ad.mp4" poster="assets/hero-ad/hero-poster.webp" preload="none" playsinline width="1080" height="1350" aria-label="Enverse ad, The Thumb"></video>
-      <button class="hero-play" type="button" aria-label="Play the Enverse ad, The Thumb, with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
-    </div>
-    <div class="hero-nav">
+      <video class="hero-ad" src="assets/hero-ad/hero-ad.mp4" poster="assets/hero-ad/hero-poster.webp" preload="none" playsinline width="1080" height="1350" aria-label="Enverse ad, Behind the company"></video>
+      <button class="hero-play" type="button" aria-label="Play the Enverse ad, Behind the company, with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
       <button class="hero-arrow hero-prev" type="button" aria-label="Previous spec ad"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg></button>
-      <span class="hero-count" aria-live="polite">1 / 5</span>
       <button class="hero-arrow hero-next" type="button" aria-label="Next spec ad"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg></button>
     </div>
-    <figcaption><strong>Enverse: The Thumb</strong></figcaption>
+    <div class="hero-nav"><span class="hero-count" aria-live="polite">1 / 5</span></div>
+    <figcaption><strong>Enverse: Behind the company</strong></figcaption>
   </figure>
 </section>
 
@@ -146,9 +144,20 @@
 
 <section id="about" class="wrap section">
   <h2>About</h2>
-  <p class="sub">Most ads get skipped in a second. We make the ones people stop for.</p>
-  <p class="sub">A dog who thinks an empty bowl is the end of the world. A tourist who goes from pointing at the menu to chatting with the waiter. Small stories, told fast, that people remember.</p>
-  <p class="sub">AI helps us move quickly. People write the story, check every frame and keep it true. We want to be the creative partner growing brands trust when they want honest ads people actually want to watch.</p>
+  <div class="about-grid">
+    <div class="about-copy">
+      <p class="about-hook">Most ads get skipped in one second. Ours get watched to the end.</p>
+      <p>Enverse helps businesses make ads that turn viewers into buyers. AI lets us work fast and keep prices low. Real people write the story and check every frame.</p>
+      <p>One goal, every time: ads people actually want to watch. Because people buy from the ads they watch.</p>
+    </div>
+    <figure class="about-media">
+      <div class="vplayer" tabindex="-1">
+        <video src="assets/hero-ad/hero-ad.mp4" poster="assets/hero-ad/hero-poster.webp" preload="none" playsinline width="1080" height="1350" aria-label="Enverse ad, Behind the company"></video>
+        <button class="hero-play play-btn" type="button" aria-label="Play the Enverse ad, Behind the company, with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+      </div>
+      <figcaption><strong>Enverse: Behind the company</strong></figcaption>
+    </figure>
+  </div>
   <h3 class="mt">What we stand for</h3>
   <ul class="values"><li><strong>Story first.</strong> If it has no story, it isn't ready.</li><li><strong>Clean and simple.</strong> One idea, said clearly.</li><li><strong>Built for watch-through.</strong> If people skip the end, we fix it.</li></ul>
 </section>
@@ -179,6 +188,6 @@
 </section>
 </main>
 <footer class="foot"><div class="wrap nav-in"><span>© <span id="y"></span> Enverse. All rights reserved.</span><span><a href="mailto:hello@enversecreative.com">hello@enversecreative.com</a> <span class="social"><a href="https://www.instagram.com/enverse.creative/" target="_blank" rel="noopener" aria-label="Enverse on Instagram (@enverse.creative)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@enverse.creative" target="_blank" rel="noopener" aria-label="Enverse on TikTok (@enverse.creative)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 4.8"/></svg></a></span></span></div></footer>
-<script src="main.js?v=20261027f"></script>
+<script src="main.js?v=20261027h"></script>
 </body>
 </html>
