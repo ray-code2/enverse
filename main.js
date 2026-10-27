@@ -10,7 +10,7 @@ document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{
     body='Please add me to The Enverse brief.\n\nEmail: '+(d.get('email')||'');
   }else{
     subject=d.get('_subject')||'New Enverse booking request';
-    body=['Name: '+(d.get('name')||''),'Email: '+(d.get('email')||''),'Company: '+(d.get('company')||''),'Monthly ad budget: '+(d.get('budget')||''),'','What we need:',(d.get('message')||'')].join('\n');
+    body=['Name: '+(d.get('name')||''),'Email: '+(d.get('email')||''),'Company: '+(d.get('company')||''),'','What we need:',(d.get('message')||'')].join('\n');
   }
   window.location.href='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   if(s)s.textContent='Your email app should open with your message. If not, email us at '+TO+'.';
@@ -22,10 +22,10 @@ document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{
 // assets/hero-ad/ and add one entry at the top of the array, e.g.:
 //   {src:'assets/hero-ad/enverse-profile.mp4', poster:'assets/hero-ad/enverse-profile-poster.jpg',
 //    title:'Enverse: "Company profile"', label:'Enverse company profile ad', caption:'Made by Enverse.'},
-// The counter, arrows and captions update automatically.
+// The counter, arrows and captions update automatically. Set ratio:'4/5' for 4:5 videos (default is 9:16); leave caption '' to show the title only.
 const HERO_SLIDES=[
-  {src:'work/media/ad3.mp4',poster:'assets/hero-ad/ad3-poster.jpg',title:'Poppi: "The 3 PM Issue"',label:'Poppi spec ad, The 3 PM Issue',caption:'Spec ad by Enverse, not affiliated with Poppi.'},
-  {src:'work/media/ad4.mp4',poster:'assets/hero-ad/ad4-poster.jpg',title:'Lexus: "Earned, Not Given"',label:'Lexus spec ad, Earned, Not Given',caption:'Spec ad by Enverse, not affiliated with Lexus.'},
+  {src:'work/media/poppi-3pm-issue.mp4',poster:'work/media/poppi-3pm-issue.webp',title:'Poppi: "The 3 PM Issue"',label:'Poppi spec ad, The 3 PM Issue',caption:'Spec ad by Enverse, not affiliated with Poppi.'},
+  {src:'work/media/lexus-earned-not-given.mp4',poster:'work/media/lexus-earned-not-given.webp',title:'Lexus: "Earned, Not Given"',label:'Lexus spec ad, Earned, Not Given',caption:'Spec ad by Enverse, not affiliated with Lexus.'},
   {src:'work/media/ad1.mp4',poster:'assets/hero-ad/ad1-poster.jpg',title:'Chewy: "The Last Scoop"',label:'Chewy spec ad, The Last Scoop',caption:'Spec ad by Enverse, not affiliated with Chewy.'},
   {src:'work/media/ad2.mp4',poster:'assets/hero-ad/ad2-poster.jpg',title:'Duolingo: "Same Café"',label:'Duolingo spec ad, Same Café',caption:'Spec ad by Enverse, not affiliated with Duolingo.'},
 ];
@@ -38,7 +38,8 @@ document.querySelectorAll('.hero-media').forEach(fig=>{
     reset();i=(n+HERO_SLIDES.length)%HERO_SLIDES.length;const s=HERO_SLIDES[i];
     v.poster=s.poster;v.src=s.src;v.preload='none';v.setAttribute('aria-label',s.label);
     play.setAttribute('aria-label','Play the '+s.label+' with sound');
-    cap.textContent='';const b=document.createElement('strong');b.textContent=s.title;cap.append(b,' · '+s.caption);
+    w.classList.toggle('is-45',s.ratio==='4/5');v.width=1080;v.height=s.ratio==='4/5'?1350:1920;
+    cap.textContent='';const b=document.createElement('strong');b.textContent=s.title;cap.append(b);if(s.caption)cap.append(' · '+s.caption);
     count.textContent=(i+1)+' / '+HERO_SLIDES.length;
   };
   play.addEventListener('click',()=>{w.classList.add('playing');v.controls=true;v.muted=false;v.play().catch(()=>w.classList.remove('playing'));});

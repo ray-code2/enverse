@@ -107,3 +107,82 @@ html{scroll-padding-top:96px}@media(max-width:860px){html{scroll-padding-top:180
 .founder-note blockquote{margin:0;font-size:1.5rem;line-height:1.35;font-weight:600;letter-spacing:-.01em}
 .founder-note figcaption{margin-top:24px;font-size:1rem}
 @media(max-width:860px){.grid.three,.grid.studio{grid-template-columns:1fr}.studio figure{max-width:420px}.founder-note{padding:28px}.founder-note blockquote{font-size:1.25rem}}
+/* ==== Design system (audit 2026-10-27): one type scale, one button, one spacing rhythm ==== */
+:root{
+  --fs-h1:clamp(2.4rem,6.5vw,5.2rem);--fs-h2:clamp(1.8rem,3.5vw,2.6rem);--fs-h3:1.15rem;--fs-lead:1.25rem;--fs-body:1rem;--fs-small:.875rem;--fs-label:.75rem;
+  --lh-tight:1.1;--lh-snug:1.3;--lh-body:1.6;
+  --ink-2:#444;--rule:1px solid #000;
+  --container:1160px;--gutter:24px;
+  --sec-y:96px;--head-gap:40px;--block-gap:80px;--gap:24px;--card-pad:28px;
+  --btn-h:48px;--btn-px:24px;--btn-border:2px;--icon-box:64px;
+}
+@media(max-width:860px){:root{--sec-y:64px;--block-gap:56px;--head-gap:32px;--card-pad:24px}}
+body{font-size:var(--fs-body);line-height:var(--lh-body)}
+/* Containers: .wrap owns the side gutter; sections only add vertical space, so every left edge lines up */
+.wrap{max-width:var(--container);padding-left:var(--gutter);padding-right:var(--gutter)}
+.section{padding:var(--sec-y) 0}
+.wrap.section{padding:var(--sec-y) var(--gutter)}
+.hero{padding-top:120px;padding-bottom:100px}@media(max-width:860px){.hero{padding-top:72px;padding-bottom:72px}}
+/* Type scale */
+h1{font-size:var(--fs-h1);line-height:1.02;font-weight:800}
+h2{font-size:var(--fs-h2);line-height:var(--lh-tight);font-weight:800;letter-spacing:-.02em}
+h3,.card h3,.tier h3,.benefit h3{font-size:var(--fs-h3);line-height:var(--lh-snug);font-weight:700;letter-spacing:-.01em}
+.lead{font-size:var(--fs-lead)}
+.card p,.steps p,.benefit p,.tier li,.pitch{font-size:var(--fs-body);line-height:var(--lh-body)}
+.card p,.steps p{color:var(--ink-2)}
+.eyebrow,.tier .tag,.label{font-size:var(--fs-label)}
+.hero-media figcaption,.studio figcaption,cite,.foot{font-size:var(--fs-small)}
+.hero-media figcaption,.studio figcaption{color:var(--ink-2)}
+.founder-note blockquote{font-size:var(--fs-lead);line-height:1.4;font-weight:600}
+.founder-note figcaption{font-size:var(--fs-small)}
+/* Section headings: one rule, centered, with one gap to the content */
+.section > h2,.section > .wrap > h2,.section h2.mt,.news h2{text-align:center;margin-left:auto;margin-right:auto}
+.section > h2 + :not(.sub),.section > .wrap > h2 + :not(.sub),.section h2.mt + *{margin-top:0}
+.sub{margin:8px auto var(--head-gap);max-width:65ch}
+.section > h2 + .sub,.section > .wrap > h2 + .sub,.news .sub{text-align:center}
+.section > h2:not(:has(+ .sub)),.section > .wrap > h2:not(:has(+ .sub)){margin-bottom:var(--head-gap)}
+.mt{margin-top:var(--block-gap);margin-bottom:var(--head-gap)}
+.benefits-section h2{margin-bottom:var(--head-gap)}
+/* About: centered heading, long paragraphs stay left-aligned in a readable centered column */
+#about .sub{text-align:left}#about h3.mt{text-align:center}
+/* Contact: heading belongs to its column (two-column layout), so it stays left */
+.two-col h2{text-align:left;margin:0}.two-col .sub{margin-left:0;text-align:left}
+/* Newsletter centered */
+.news .inline{margin:0 auto;justify-content:center}
+/* Buttons: one primary (black), one secondary (outline), same size everywhere */
+.btn,.btn-sm{display:inline-flex;align-items:center;justify-content:center;min-height:var(--btn-h);padding:0 var(--btn-px);font:inherit;font-size:var(--fs-body);font-weight:700;line-height:1;border:var(--btn-border) solid #000;border-radius:0;text-decoration:none;white-space:nowrap}
+.invert .btn-inv{border-color:#fff}
+.form input,.form select{min-height:var(--btn-h)}
+.hero-arrow{width:var(--btn-h);height:var(--btn-h);border:var(--btn-border) solid #000}
+/* Cards: one border, one padding, one icon size */
+.card,.tier,.founder-note{border:var(--rule);padding:var(--card-pad);border-radius:0}
+.invert .tier{border-color:#fff}
+.grid,.tiers,.steps,.grid.studio{gap:var(--gap)}
+.studio img{border:var(--rule)}
+.benefit-icon{width:var(--icon-box);height:var(--icon-box)}
+/* Commitments: centered like the benefits */
+.commit{text-align:center}
+.commit-icon{width:calc(var(--icon-box) * 1.28);height:calc(var(--icon-box) * 1.28);margin:0 auto 8px}
+.commit h3{margin:8px 0 8px}
+/* Studio + founder note centered to match */
+.studio figcaption{text-align:center}
+.founder-note{margin:var(--block-gap) auto 0;text-align:center}
+.founder-note img{margin:0 auto 20px}
+.inline{align-items:flex-start}.form input,.form select{height:var(--btn-h);padding-top:0;padding-bottom:0}
+/* Hero player: 4:5 slides (e.g. The Thumb) vs 9:16 spec ads */
+.hero-player .hero-ad{transition:aspect-ratio .2s ease}
+.hero-player.is-45 .hero-ad{aspect-ratio:4/5}
+@media(min-width:861px){.hero-media:has(.is-45){max-width:400px}}
+/* Proof: $49 starter set and before/after */
+.starter-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap)}
+.proof img{width:100%;height:auto;display:block;border:var(--rule)}
+.starter-grid img{aspect-ratio:4/5}
+.sizes{display:flex;justify-content:center;align-items:flex-end;gap:var(--gap);margin-top:var(--head-gap)}
+.sizes figure{margin:0}.sizes figure:nth-child(1){width:140px}.sizes figure:nth-child(2){width:140px}.sizes figure:nth-child(3){width:140px}
+.sizes figcaption,.ba figcaption{font-size:var(--fs-small);text-align:center;margin-top:8px;font-weight:600}
+.proof-note{font-size:var(--fs-small);color:var(--ink-2);text-align:center;margin-top:var(--gap)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);max-width:760px;margin:0 auto}
+.ba figure{margin:0}.ba figcaption{font-size:var(--fs-body);font-weight:700;letter-spacing:.02em}
+.ba-after img{border-width:var(--btn-border)}
+@media(max-width:1100px){.starter-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.starter-grid{grid-template-columns:repeat(2,1fr)}.ba{grid-template-columns:1fr;max-width:420px}.sizes figure:nth-child(n){width:30%}}
