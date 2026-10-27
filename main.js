@@ -24,7 +24,7 @@ document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{
 //    title:'Enverse: "Company profile"', label:'Enverse company profile ad', caption:'Made by Enverse.'},
 // The counter, arrows and captions update automatically. Set ratio:'4/5' for 4:5 videos (default is 9:16); leave caption '' to show the title only.
 const HERO_SLIDES=[
-  {src:'assets/hero-ad/hero-ad.mp4',poster:'assets/hero-ad/hero-poster.webp',title:'Enverse: Behind the company',label:'Enverse ad, Behind the company',caption:'',ratio:'4/5'},
+  {src:'assets/hero-ad/hero-ad.mp4',poster:'assets/hero-ad/hero-poster.webp?v=20261027i',title:'Enverse: Behind the company',label:'Enverse ad, Behind the company',caption:'',ratio:'4/5'},
   {src:'work/media/poppi-3pm-issue.mp4',poster:'work/media/poppi-3pm-issue.webp',title:'Poppi: "The 3 PM Issue"',label:'Poppi spec ad, The 3 PM Issue',caption:'Spec ad by Enverse, not affiliated with Poppi.'},
   {src:'work/media/lexus-earned-not-given.mp4',poster:'work/media/lexus-earned-not-given.webp',title:'Lexus: "Earned, Not Given"',label:'Lexus spec ad, Earned, Not Given',caption:'Spec ad by Enverse, not affiliated with Lexus.'},
   {src:'work/media/ad1.mp4',poster:'assets/hero-ad/ad1-poster.jpg',title:'Chewy: "The Last Scoop"',label:'Chewy spec ad, The Last Scoop',caption:'Spec ad by Enverse, not affiliated with Chewy.'},
