@@ -233,14 +233,10 @@ h3,.card h3,.tier h3,.benefit h3{font-size:var(--fs-h3);line-height:var(--lh-snu
 @media(max-width:480px){.hero .hero-media{max-width:none;padding:0 64px}.hero-player .hero-prev{left:-64px}.hero-player .hero-next{right:-64px}}
 
 /* === rev j: phone/tablet polish === */
-/* Phones: one-row scrollable menu so the sticky header stays short, and 48px tap targets */
+/* Phones: compact header (burger menu below) */
 @media(max-width:860px){
-.nav-in{padding-top:8px;padding-bottom:8px;gap:4px}
-nav{flex-wrap:nowrap;overflow-x:auto;gap:0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:0 24px;width:calc(100% + 48px)}
-nav::-webkit-scrollbar{display:none}
-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 10px;white-space:nowrap;flex:0 0 auto}
-nav a.btn{order:-1;margin-left:0;margin-right:6px;padding:0 18px}
-html{scroll-padding-top:140px}
+.nav-in{padding-top:8px;padding-bottom:8px}
+html{scroll-padding-top:100px}
 .hero{padding-top:40px}
 }
 /* Small links and icons get a full-size tap area */
@@ -248,3 +244,31 @@ html{scroll-padding-top:140px}
 .foot a[href^="mailto"]{justify-content:flex-start;min-width:0}
 .skip:focus{min-height:48px;display:inline-flex;align-items:center}
 .card a[href="work/"]{display:inline-block;padding:14px 0;margin:-14px 0}
+
+/* === rev k: burger + slide-in menu (phones and small tablets; only when nav.js runs) === */
+.menu-btn,.menu-panel,.menu-backdrop,.menu-cta{display:none}
+@media(max-width:860px){
+.js-nav .nav-in{flex-wrap:nowrap}
+.js-nav .nav-in>nav{display:none}
+.js-nav .menu-bar{display:flex;align-items:center;gap:8px;margin-left:auto}
+.js-nav .menu-cta{display:inline-flex;align-items:center;min-height:48px}
+.js-nav .menu-btn{display:grid;place-items:center;width:48px;height:48px;border:1px solid #000;background:#fff;color:#000;cursor:pointer;padding:0}
+.js-nav .menu-btn:focus-visible,.menu-close:focus-visible,.menu-panel a:focus-visible{outline:2px solid #000;outline-offset:2px}
+.js-nav .menu-backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+.js-nav .menu-panel{display:flex;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:min(84vw,360px);background:#fff;border-left:1px solid #000;z-index:41;padding:12px 24px 32px;overflow-y:auto;overscroll-behavior:contain;transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s}
+.menu-open .menu-backdrop{opacity:1;visibility:visible;transition:opacity .25s ease}
+.menu-open .menu-panel{transform:none;visibility:visible;transition:transform .3s ease}
+.menu-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.menu-head .eyebrow{margin:0}
+.menu-close{width:48px;height:48px;display:grid;place-items:center;border:1px solid #000;background:#fff;color:#000;cursor:pointer;padding:0}
+.menu-panel ul{list-style:none;margin:0;padding:0;border-top:1px solid #000}
+.menu-panel li a{display:flex;align-items:center;min-height:56px;font-size:1.25rem;font-weight:600;text-decoration:none;color:#000;border-bottom:1px solid #000;margin:0}
+.menu-panel li a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+.menu-panel .btn{margin:28px 0 0;width:100%;justify-content:center;display:flex;align-items:center;min-height:56px}
+}
+.js-nav .menu-cta{padding:0 14px;white-space:nowrap}
+.js-nav .nav-in{gap:8px}
+.js-nav .logo{flex:0 1 auto;min-width:0}
+@media(max-width:400px){.js-nav .logo-img{height:56px;margin:-10px 0 -10px -13px}}
+html.menu-lock,html.menu-lock body{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.js-nav .menu-panel,.js-nav .menu-backdrop,.menu-open .menu-panel,.menu-open .menu-backdrop{transition:none}}
