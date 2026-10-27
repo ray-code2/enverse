@@ -246,7 +246,7 @@ html{scroll-padding-top:100px}
 .card a[href="work/"]{display:inline-block;padding:14px 0;margin:-14px 0}
 
 /* === rev k: burger + slide-in menu (phones and small tablets; only when nav.js runs) === */
-.menu-btn,.menu-panel,.menu-backdrop,.menu-cta{display:none}
+.menu-bar,.menu-btn,.menu-panel,.menu-backdrop,.menu-cta{display:none}
 @media(max-width:860px){
 .js-nav .nav-in{flex-wrap:nowrap}
 .js-nav .nav-in>nav{display:none}
@@ -266,9 +266,7 @@ html{scroll-padding-top:100px}
 .menu-panel li a[aria-current]{text-decoration:underline;text-underline-offset:4px}
 .menu-panel .btn{margin:28px 0 0;width:100%;justify-content:center;display:flex;align-items:center;min-height:56px}
 }
-.js-nav .menu-cta{padding:0 14px;white-space:nowrap}
-.js-nav .nav-in{gap:8px}
-.js-nav .logo{flex:0 1 auto;min-width:0}
+@media(max-width:860px){.js-nav .menu-cta{padding:0 14px;white-space:nowrap}.js-nav .nav-in{gap:8px}.js-nav .logo{flex:0 1 auto;min-width:0}}
 @media(max-width:400px){.js-nav .logo-img{height:56px;margin:-10px 0 -10px -13px}}
 html.menu-lock,html.menu-lock body{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.js-nav .menu-panel,.js-nav .menu-backdrop,.menu-open .menu-panel,.menu-open .menu-backdrop{transition:none}}
