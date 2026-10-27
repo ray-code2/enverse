@@ -69,3 +69,4 @@ blockquote{font-size:1.15rem;font-weight:500}cite{display:block;margin-top:16px;
 section[id]{scroll-margin-top:96px}
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-media{justify-self:center;max-width:300px}section[id]{scroll-margin-top:200px}}
 .hero-nav{display:flex;align-items:center;justify-content:space-between;margin-top:10px}.hero-arrow{width:44px;height:44px;border:1px solid #000;background:#fff;color:#000;display:grid;place-items:center;cursor:pointer}.hero-arrow:hover,.hero-arrow:focus-visible{background:#000;color:#fff;outline:none}.hero-count{font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.05em}.hero-player{touch-action:pan-y}
+html{scroll-padding-top:96px}@media(max-width:860px){html{scroll-padding-top:180px}}
