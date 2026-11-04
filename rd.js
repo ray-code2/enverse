@@ -17,13 +17,13 @@
     var lv=lb.querySelector('video'),last=null;
     d.querySelectorAll('.spec-open').forEach(function(b){b.addEventListener('click',function(){
       var s=b.closest('.spec'),pv=s.querySelector('video');if(pv)pv.pause();
-      last=b;lb.setAttribute('aria-label',s.dataset.title);lv.src=s.dataset.full;lv.muted=false;lb.showModal();
+      last=b;lb.setAttribute('aria-label',s.dataset.title);lv.src=s.dataset.full;lv.muted=false;lb.classList.add('ld');lv.addEventListener('loadedmetadata',function(){lb.classList.remove('ld')},{once:true});d.documentElement.classList.add('lb-open');lb.showModal();requestAnimationFrame(function(){lb.classList.add('on')});
       if(!rm)lv.play().catch(function(){});lb.querySelector('.rd-lb-x').focus();
     })});
     function close(){lv.pause();lv.removeAttribute('src');lv.load();if(lb.open)lb.close()}
     lb.querySelector('.rd-lb-x').addEventListener('click',close);
     lb.addEventListener('click',function(e){if(e.target===lb)close()});
-    lb.addEventListener('close',function(){lv.pause();if(last)last.focus()});
+    lb.addEventListener('close',function(){lv.pause();lb.classList.remove('on','ld');d.documentElement.classList.remove('lb-open');if(last)last.focus()});
   }
   // Approach sticky scene (desktop, motion allowed)
   var ap=d.querySelector('[data-scene]');
