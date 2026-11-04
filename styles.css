@@ -445,3 +445,10 @@ html,body{overflow-x:clip}
 .hero-splash .b3{width:400px;height:400px;left:0;top:0;filter:blur(40px);background:radial-gradient(circle,rgba(26,48,208,.28),rgba(26,48,208,0) 65%);opacity:0;transition:opacity .9s var(--ease)}
 .hero-splash.live .b3{opacity:1}
 .hero-splash,.hero-splash i{pointer-events:none}
+/* polish 20261104 */
+.craft{font-weight:500;border-left:2px solid #1A30D0;padding-left:14px;margin-top:18px}
+.invert .craft{border-color:#8E9BFF}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #8E9BFF;outline-offset:3px}
+.faq summary{cursor:pointer}
+.faq details p a{text-decoration:underline;text-underline-offset:3px}
+.tier li{line-height:1.5}
