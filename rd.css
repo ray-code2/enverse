@@ -212,3 +212,19 @@
 .rd .news .inline input{width:auto;flex:1 1 auto}
 .rd .news .inline .btn{width:auto}
 @media(max-width:420px){.rd .news .inline input{flex-basis:100%}.rd .news .inline .btn{width:100%}}
+/* ===== Sub-pages (work, brief, thanks, 404) on the dark theme ===== */
+.rd-sub h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.02}
+.rd-sub main,.rd-sub section{background:transparent}
+.rd-sub p,.rd-sub li,.rd-sub label,.rd-sub legend,.rd-sub dd,.rd-sub figcaption{color:var(--fg)}
+.rd-sub .muted,.rd-sub small,.rd-sub .hint,.rd-sub .help{color:var(--mut)}
+.rd-sub a:not(.btn){color:var(--fg)}
+.rd-sub input,.rd-sub select,.rd-sub textarea{background:var(--s1);color:var(--fg);border:1px solid var(--ln)}
+.rd-sub input::placeholder,.rd-sub textarea::placeholder{color:#6b6b6b}
+.rd-sub input:focus,.rd-sub select:focus,.rd-sub textarea:focus{border-color:var(--ac-soft);outline:none;box-shadow:0 0 0 3px rgba(142,155,255,.25)}
+.rd-sub fieldset,.rd-sub .card,.rd-sub .tier,.rd-sub details,.rd-sub .work-item,.rd-sub .panel{background:var(--s1);border-color:var(--ln);color:var(--fg)}
+.rd-sub hr{border-color:var(--ln)}
+.rd-sub .btn{background:var(--ac);border-color:var(--ac);color:#fff}
+.rd-sub .btn:hover{background:#2a41e6;border-color:#2a41e6}
+.rd-sub .btn-ghost{background:transparent;color:var(--fg);border-color:#444}
+.rd-sub .btn-ghost:hover{border-color:var(--fg);background:transparent}
+.rd-sub .foot{background:var(--bg);color:var(--mut);border-top:1px solid var(--ln)}
