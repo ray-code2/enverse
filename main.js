@@ -1,7 +1,7 @@
 document.getElementById('y').textContent=new Date().getFullYear();
-// Forms open a prefilled email to hello@ (no third-party form service).
+// Newsletter opens a prefilled email (booking and brief post to FormSubmit) to hello@ (no third-party form service).
 const TO='hello@enversecreative.com';
-document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{
+document.querySelectorAll('form[name=newsletter]').forEach(f=>f.addEventListener('submit',e=>{
   e.preventDefault();
   const d=new FormData(f), s=f.querySelector('.status');
   let subject, body;

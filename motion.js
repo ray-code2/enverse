@@ -11,7 +11,7 @@
     h.classList.add('split');
   });
   var sel='main .eyebrow,main h1,main h2,main .lead,main .sub,main .cta,main section > p,.about-copy > *,.about-media,.hero-media,.faq details,main fieldset';
-  var groups='.benefits,.tiers,.journey,.steps,.grid,.starter-grid,.logos';
+  var groups='.rd-ads,.rd-3,.rd-stack,.benefits,.tiers,.flow,.journey,.steps,.grid,.starter-grid,.logos';
   var els=[];
   d.querySelectorAll(sel).forEach(function(e){e.classList.add('rv');els.push(e)});
   d.querySelectorAll(groups).forEach(function(g){

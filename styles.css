@@ -453,3 +453,62 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 .faq details p a{text-decoration:underline;text-underline-offset:3px}
 .tier li{line-height:1.5}
 .vplayer video.r916{aspect-ratio:9/16}
+/* ===== 20261104b: how-we-work flow, consistent buttons, hover micro-interactions ===== */
+/* How we work: illustrated, connected steps */
+.flow{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:24px;position:relative;counter-reset:f}
+.flow::before{content:"";position:absolute;left:calc(100%/12);right:calc(100%/12);top:36px;height:1px;background:linear-gradient(90deg,var(--ac),var(--ac-soft));opacity:.5}
+.flow-step{position:relative;text-align:center}
+.flow-node{position:relative;z-index:1;display:grid;place-items:center;width:72px;height:72px;margin:0 auto 20px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ac);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.flow-ico{width:34px;height:34px}
+.flow-step .journey-step{display:block;font-size:var(--fs-label);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+.flow-step h3{margin:0 0 8px}
+.flow-step p{margin:0;color:var(--ink-2);font-size:.95rem;line-height:1.6}
+.flow-step:nth-child(4) .flow-node{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media(max-width:1100px){.flow{grid-template-columns:repeat(3,1fr);row-gap:48px}.flow::before{display:none}}
+@media(max-width:860px){
+.flow{grid-template-columns:1fr;gap:0;max-width:520px;margin-left:auto;margin-right:auto}
+.flow::before{display:block;left:35px;right:auto;top:36px;bottom:36px;width:1px;height:auto;background:linear-gradient(180deg,var(--ac),var(--ac-soft))}
+.flow-step{display:grid;grid-template-columns:72px 1fr;column-gap:20px;text-align:left;padding-bottom:36px}
+.flow-step:last-child{padding-bottom:0}
+.flow-node{grid-row:1/4;margin:0}
+.flow-step .journey-step{margin-top:6px}
+}
+/* Buttons: one system on every page */
+.btn,.btn-sm{min-height:48px;padding:0 24px;font-size:1rem;font-weight:600;line-height:1;letter-spacing:.01em;border-radius:999px;border-width:1px;gap:8px;transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+.btn-sm{min-height:40px;padding:0 18px;font-size:.95rem}
+.tier .cta{display:grid;gap:10px;margin-top:auto}.tier .cta .btn{width:100%}
+.brief-form .btn,.form .btn{min-width:200px}
+h1,h2,h3{font-family:inherit}
+/* PayPal note */
+.pay-note{display:flex;align-items:center;justify-content:center;gap:8px;font-size:var(--fs-small);opacity:.85;margin:-20px auto 32px;text-align:center}
+.pp-mark{font-weight:800;font-style:italic;letter-spacing:-.02em}
+.faq .pay-note{justify-content:flex-start}
+.form select{appearance:none;background:transparent}
+.invert .form select option{color:#000}
+/* Link arrow */
+.arr{display:inline-block;transition:transform .25s ease}
+/* Hover micro-interactions: fine pointers only, transform/opacity */
+@media (hover:hover) and (pointer:fine){
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(26,48,208,.7)}
+.card{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -26px rgba(26,48,208,.55)}
+.card:hover .arr,a:hover>.arr{transform:translateX(4px)}
+.tier{transition:transform .3s ease,border-color .3s ease}
+.flow-step:hover .flow-node{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 14px 30px -18px rgba(26,48,208,.6)}
+.benefit-icon{transition:transform .25s ease,background .25s ease,color .25s ease}
+.benefit:hover .benefit-icon{transform:translateY(-3px)}
+.faq-list summary::after{transition:transform .25s ease}
+.faq-list summary:hover::after{transform:translateX(-3px)}
+.faq-list details[open] summary:hover::after{transform:rotate(45deg)}
+.starter-grid img,.ba img{transition:transform .3s ease}
+.starter-grid li:hover img,.ba figure:hover img{transform:translateY(-3px)}
+}
+@media (hover:none){.btn:hover,.card:hover,.tier:hover{transform:none;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){.btn:hover,.card:hover,.tier:hover,.flow-step:hover .flow-node,.benefit:hover .benefit-icon,.arr{transform:none!important}}
+.form select{border-radius:var(--r-sm);border:1px solid currentColor;padding:0 12px;height:var(--btn-h)}
+/* Work page alignment 20261104d */
+.grid.grid-2{gap:28px;align-items:stretch}
+.grid.grid-2>.card{display:flex;flex-direction:column}
+.grid.grid-2>.card>details{margin-top:auto}
+.work-still{display:block;width:100%;aspect-ratio:4/5;object-fit:contain;background:#f4f4f4;border:1px solid var(--line,#e5e5e5);border-radius:var(--r-sm,8px)}
+@media(max-width:860px){.grid.grid-2{gap:16px}}
