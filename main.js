@@ -26,7 +26,7 @@ document.querySelectorAll('form[name=newsletter]').forEach(f=>f.addEventListener
 const HERO_SLIDES=[
   {src:'assets/hero-ad/company-v4.mp4',poster:'assets/hero-ad/company-v4-poster.webp',title:'Enverse: Behind the company',label:'Enverse ad, Behind the company',caption:'',ratio:'9/16'},
   {src:'work/media/poppi-3pm-issue.mp4',poster:'work/media/poppi-3pm-issue.webp',title:'Poppi: "The 3 PM Issue"',label:'Poppi spec ad, The 3 PM Issue',caption:'Spec ad by Enverse, not affiliated with Poppi.'},
-  {src:'work/media/lexus-earned-not-given.mp4',poster:'work/media/lexus-earned-not-given.webp',title:'Lexus: "Earned, Not Given"',label:'Lexus spec ad, Earned, Not Given',caption:'Spec ad by Enverse, not affiliated with Lexus.'},
+  {src:'assets/spec/lexus-everyone-fits-now-v4.mp4',poster:'assets/spec/lexus-everyone-fits-now-v4-poster.webp',title:'Lexus: "Everyone Fits Now"',label:'Lexus spec ad, Everyone Fits Now',caption:'Concept work by Enverse, not affiliated with Lexus.'},
   {src:'work/media/ad1.mp4',poster:'assets/hero-ad/ad1-poster.jpg',title:'Chewy: "The Last Scoop"',label:'Chewy spec ad, The Last Scoop',caption:'Spec ad by Enverse, not affiliated with Chewy.'},
   {src:'work/media/ad2.mp4',poster:'assets/hero-ad/ad2-poster.jpg',title:'Duolingo: "Same Café"',label:'Duolingo spec ad, Same Café',caption:'Spec ad by Enverse, not affiliated with Duolingo.'},
 ];
