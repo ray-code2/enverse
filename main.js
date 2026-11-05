@@ -1,17 +1,24 @@
 document.getElementById('y').textContent=new Date().getFullYear();
 // Newsletter posts to the Enverse Google Apps Script, which saves the subscriber and sends the welcome note.
+function nlDone(f){
+  f.classList.add('is-done');
+  const s=f.querySelector('.status');
+  if(s)s.textContent='Thank you. Your welcome note is on its way.';
+}
 document.querySelectorAll('form[name=newsletter]').forEach(f=>f.addEventListener('submit',e=>{
   const hp=f.querySelector('[name=_honey]');
   if(hp&&hp.value){e.preventDefault();return;}
-  const b=f.querySelector('[type=submit]');
-  if(b){b.setAttribute('aria-busy','true');b.textContent='Subscribing';}
+  if(!window.fetch)return;
+  e.preventDefault();
+  const b=f.querySelector('[type=submit]'), label=b?b.textContent:'';
+  if(b){b.setAttribute('aria-busy','true');b.disabled=true;b.textContent='Subscribing';}
+  fetch(f.action,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
+    .then(()=>{nlDone(f);f.reset();})
+    .catch(()=>{const s=f.querySelector('.status');if(s)s.textContent='Something went wrong. Please try again in a moment.';})
+    .finally(()=>{if(b){b.removeAttribute('aria-busy');b.disabled=false;b.textContent=label;}});
 }));
 if(new URLSearchParams(location.search).get('subscribed')==='1'){
-  document.querySelectorAll('form[name=newsletter]').forEach(f=>{
-    f.classList.add('is-done');
-    const s=f.querySelector('.status');
-    if(s)s.textContent='Thank you. Your welcome note is on its way.';
-  });
+  document.querySelectorAll('form[name=newsletter]').forEach(nlDone);
   const n=document.getElementById('newsletter');
   if(n&&!location.hash)n.scrollIntoView();
 }
