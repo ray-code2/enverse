@@ -243,3 +243,4 @@ html.lb-open,html.lb-open body{overflow:hidden}
 .rd-sub .work-head .sub{margin:0;max-width:60ch;text-align:left;color:var(--mut);font-size:clamp(1rem,1.2vw,1.125rem);line-height:1.65}
 @keyframes wh-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.rd-sub .work-head{animation:none}}
+.rd .mail-ic{position:relative}.rd .mail-ic::after{content:attr(data-tip);position:absolute;bottom:calc(100% - 4px);left:50%;transform:translate(-50%,4px);background:#0b1a3a;color:#fff;font-size:12px;letter-spacing:.02em;padding:6px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease}.rd .mail-ic:hover::after,.rd .mail-ic:focus-visible::after{opacity:1;transform:translate(-50%,0)}.rd .social a svg{transition:transform .25s ease,color .25s ease}.rd .social a:hover svg{transform:translateY(-2px)}
