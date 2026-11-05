@@ -1,20 +1,20 @@
 document.getElementById('y').textContent=new Date().getFullYear();
-// Newsletter opens a prefilled email (booking and brief post to FormSubmit) to hello@ (no third-party form service).
-const TO='hello@enversecreative.com';
+// Newsletter posts to the Enverse Google Apps Script, which saves the subscriber and sends the welcome note.
 document.querySelectorAll('form[name=newsletter]').forEach(f=>f.addEventListener('submit',e=>{
-  e.preventDefault();
-  const d=new FormData(f), s=f.querySelector('.status');
-  let subject, body;
-  if(f.name==='newsletter'){
-    subject='Newsletter signup';
-    body='Please add me to The Enverse brief.\n\nEmail: '+(d.get('email')||'');
-  }else{
-    subject=d.get('_subject')||'New Enverse booking request';
-    body=['Name: '+(d.get('name')||''),'Email: '+(d.get('email')||''),'Company: '+(d.get('company')||''),'','What we need:',(d.get('message')||'')].join('\n');
-  }
-  window.location.href='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  if(s)s.textContent='Your email app should open with your message. If not, email us at '+TO+'.';
+  const hp=f.querySelector('[name=_honey]');
+  if(hp&&hp.value){e.preventDefault();return;}
+  const b=f.querySelector('[type=submit]');
+  if(b){b.setAttribute('aria-busy','true');b.textContent='Subscribing';}
 }));
+if(new URLSearchParams(location.search).get('subscribed')==='1'){
+  document.querySelectorAll('form[name=newsletter]').forEach(f=>{
+    f.classList.add('is-done');
+    const s=f.querySelector('.status');
+    if(s)s.textContent='Thank you. Your welcome note is on its way.';
+  });
+  const n=document.getElementById('newsletter');
+  if(n&&!location.hash)n.scrollIntoView();
+}
 
 // Hero spec ad carousel.
 // HERO_SLIDES is the single list of hero ads, shown in this order.
