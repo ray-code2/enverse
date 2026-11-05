@@ -235,3 +235,11 @@ html.lb-open,html.lb-open body{overflow:hidden}
 .rd-sub .btn-ghost{background:transparent;color:var(--fg);border-color:#444}
 .rd-sub .btn-ghost:hover{border-color:var(--fg);background:transparent}
 .rd-sub .foot{background:var(--bg);color:var(--mut);border-top:1px solid var(--ln)}
+/* ===== Work page heading ===== */
+.rd-sub .work-head{margin:0 0 clamp(40px,6vw,72px);padding:0 0 clamp(28px,4vw,40px);border-bottom:1px solid var(--ln);text-align:left;animation:wh-in .7s cubic-bezier(.2,.7,.2,1) both}
+.rd-sub .work-head .work-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.rd-sub .work-head .work-eyebrow::before{content:"";width:28px;height:2px;background:var(--ac-soft)}
+.rd-sub .work-head h1{margin:0 0 20px;font-size:clamp(3rem,7vw,5.5rem);line-height:.98;letter-spacing:-.035em;font-weight:700;color:var(--fg)}
+.rd-sub .work-head .sub{margin:0;max-width:60ch;text-align:left;color:var(--mut);font-size:clamp(1rem,1.2vw,1.125rem);line-height:1.65}
+@keyframes wh-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rd-sub .work-head{animation:none}}
