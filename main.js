@@ -23,6 +23,27 @@ if(new URLSearchParams(location.search).get('subscribed')==='1'){
   if(n&&!location.hash)n.scrollIntoView();
 }
 
+function sgDone(f){
+  f.classList.add('is-done');
+  const s=f.querySelector('.status');
+  if(s)s.textContent='Thank you. Your note reaches us directly and helps shape what we build next.';
+}
+document.querySelectorAll('form[name=suggestion]').forEach(f=>f.addEventListener('submit',e=>{
+  const hp=f.querySelector('[name=_honey]');
+  if(hp&&hp.value){e.preventDefault();return;}
+  if(!window.fetch)return;
+  e.preventDefault();
+  const b=f.querySelector('[type=submit]'), label=b?b.textContent:'';
+  if(b){b.setAttribute('aria-busy','true');b.disabled=true;b.textContent='Sending';}
+  fetch(f.action,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
+    .then(()=>{sgDone(f);f.reset();})
+    .catch(()=>{const s=f.querySelector('.status');if(s)s.textContent='Something went wrong. Please try again in a moment.';})
+    .finally(()=>{if(b){b.removeAttribute('aria-busy');b.disabled=false;b.textContent=label;}});
+}));
+if(new URLSearchParams(location.search).get('sent')==='1'){
+  document.querySelectorAll('form[name=suggestion]').forEach(sgDone);
+}
+
 // Hero spec ad carousel.
 // HERO_SLIDES is the single list of hero ads, shown in this order.
 // To add the Enverse company profile ad as the FIRST slide, put its files in

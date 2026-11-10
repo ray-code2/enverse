@@ -248,3 +248,21 @@ html.lb-open,html.lb-open body{overflow:hidden}
 .rd .news .hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 .rd .news .inline .status{position:absolute;top:100%;left:0;right:0;text-align:center;margin:16px 0 0;color:#fff;font-size:15px;letter-spacing:.01em;opacity:.92}
 .rd .news .inline.is-done{margin-bottom:40px}
+
+/* ===== Footer suggestion link ===== */
+.rd .foot .foot-suggest{min-width:0;color:var(--mut);font-weight:400;margin-left:4px}
+.rd .foot .foot-suggest:hover,.rd .foot .foot-suggest:focus-visible{color:var(--fg)}
+/* ===== Suggest page ===== */
+.rd-sub .suggest-form{max-width:36rem;display:grid;gap:4px;animation:wh-in .7s cubic-bezier(.2,.7,.2,1) .12s both}
+.rd-sub .suggest-form .suggest-fields{display:grid;gap:18px}
+.rd-sub .suggest-form .suggest-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rd-sub .suggest-form .opt{font-weight:400;color:var(--mut);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;margin-left:6px}
+.rd-sub .suggest-form .suggest-note{margin:0;color:var(--mut);font-size:.875rem;line-height:1.5}
+.rd-sub .suggest-form .btn{width:auto;min-width:200px;justify-self:start}
+.rd-sub .suggest-form .hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.rd-sub .suggest-form .status{margin:0;color:var(--fg);font-size:1.0625rem;line-height:1.65;max-width:40ch}
+.rd-sub .suggest-form.is-done .suggest-fields{display:none}
+.rd-sub .suggest-form.is-done .status{animation:wh-in .5s cubic-bezier(.2,.7,.2,1) both}
+.rd .form textarea:user-invalid{border-color:#ff7a7a}
+@media(max-width:600px){.rd-sub .suggest-form .suggest-row{grid-template-columns:1fr}.rd-sub .suggest-form .btn{width:100%;justify-self:stretch}}
+@media(prefers-reduced-motion:reduce){.rd-sub .suggest-form,.rd-sub .suggest-form.is-done .status{animation:none}}
